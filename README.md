@@ -1,5 +1,3 @@
-# Автор: Федорчук Дмитрий Сергеевич DEVOPS-33
-
 # Дипломный практикум в Yandex.Cloud
   * [Цели:](#цели)
   * [Этапы выполнения:](#этапы-выполнения)
@@ -327,11 +325,11 @@ variable "subnet2" {
 
 Также при развёртывании виртуальных машин буду использовать файл `cloud-init.yml`, который установит на них полезные в дальнейшем пакеты. Например, curl, Git, MC, atop и другие.
 
-Код для создания Master ноды находится в файле [master.tf](https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform/master.tf)
+Код для создания Master ноды находится в файле [master.tf](https://github.com/osipovtema/DiplomYandex/blob/main/terraform/master.tf)
 
-Код для создания Worker нод находится в файле [worker.tf](https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform/worker.tf)
+Код для создания Worker нод находится в файле [worker.tf](https://github.com/osipovtema/DiplomYandex/blob/main/terraform/worker.tf)
 
-Код для установки необходимых пакетов на виртуальные машины при их развертывании находится в файле [cloud-init.yml](https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform/cloud-init.yml)
+Код для установки необходимых пакетов на виртуальные машины при их развертывании находится в файле [cloud-init.yml](https://github.com/osipovtema/DiplomYandex/blob/main/terraform/cloud-init.yml)
 
 Проверю, создались ли виртуальные машины:
 
