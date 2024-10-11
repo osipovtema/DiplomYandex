@@ -377,17 +377,19 @@ variable "subnet2" {
 
 ![img_17](IMG/img_17.png)
 
-Код Workflow доступен по ссылке: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/.github/workflows/terraform-cloud.yml
+Код Workflow доступен по ссылке: https://github.com/osipovtema/DiplomYandex/blob/main/.github/workflows/terraform-cloud.yml
 
-Выполненные GitHub Actions доступны по ссылке: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/actions
+Выполненные GitHub Actions 
+<img width="616" alt="image" src="https://github.com/user-attachments/assets/dd09e0bc-c4c4-45c1-9cc5-a7941f5d464f">
+
 
 Полный код Terraform для создания сервисного аккаунта, статического ключа и S3-bucket доступен по ссылке:
 
-https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform-s3/
+https://github.com/osipovtema/DiplomYandex/tree/main/terraform-s3
 
 Полный код Terraform для создания сети, подсетей, виртуальных машин доступен по ссылке:
 
-https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform/
+https://github.com/osipovtema/DiplomYandex/tree/main/terraform
 
 В ходе выполнения работы код может быть изменен и дополнен.
 
