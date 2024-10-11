@@ -380,8 +380,8 @@ variable "subnet2" {
 Код Workflow доступен по ссылке: https://github.com/osipovtema/DiplomYandex/blob/main/.github/workflows/terraform-cloud.yml
 
 Выполненные GitHub Actions 
-<img width="616" alt="image" src="https://github.com/user-attachments/assets/dd09e0bc-c4c4-45c1-9cc5-a7941f5d464f">
 
+<img width="616" alt="image" src="https://github.com/user-attachments/assets/dd09e0bc-c4c4-45c1-9cc5-a7941f5d464f">
 
 Полный код Terraform для создания сервисного аккаунта, статического ключа и S3-bucket доступен по ссылке:
 
@@ -472,9 +472,7 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
 ### Создание тестового приложения
 
-1. Создаю отдельный репозиторий для тестового приложения:
-
-![img_22](IMG/img_22.png)
+1. Создаю отдельный репозиторий для тестового приложения
 
 Клонирую репозиторий на свою рабочую машину:
 
@@ -490,7 +488,7 @@ ansible-playbook -i inventory/mycluster/hosts.yaml -u ubuntu --become --become-u
 
 ![img_26](IMG/img_26.png)
 
-Ссылка на репозиторий: https://github.com/DemoniumBlack/diplom-test-site
+Ссылка на репозиторий: https://github.com/osipovtema/diplom-test-site
 
 2. Пишу Dockerfile, который создаст контейнер с nginx и отобразит созданную страницу:
 
@@ -524,8 +522,6 @@ EXPOSE 80
 Проверю наличие образа в реестре Docker Hub:
 
 ![img_32](IMG/img_32.png)
-
-Ссылка на реестр Docker Hub: https://hub.docker.com/repository/docker/demonium1988/diplom-test-site/general
 
 Образ опубликован, подготовка тестового приложения закончена.
 
@@ -585,7 +581,7 @@ grafana:
 
 Установка была выполнена с заданными в `values.yaml` значениями.
 
-Файл значений `values.yaml`, использованный при установке `prometheus-community` доступен по ссылке: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/helm-prometheus/values.yaml
+Файл значений `values.yaml`, использованный при установке `prometheus-community` доступен по ссылке: https://github.com/osipovtema/DiplomYandex/blob/main/helm-prometheus/values.yaml
 
 Открою web-интерфейс Grafana:
 
@@ -621,7 +617,7 @@ Deployment создан и запущен. Проверю его работу:
 
 Приложение работает.
 
-Ссылка на манифест Deployment: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/k8s-app/deployment.yaml
+Ссылка на манифест Deployment: https://github.com/osipovtema/DiplomYandex/blob/main/k8s-app/deployment.yaml
 
 Пишу манифест сервиса с типом NodePort для доступа к web-интерфейсу тестового приложения:
 
@@ -637,14 +633,14 @@ Deployment создан и запущен. Проверю его работу:
 
 Сайт открывается, приложение доступно.
 
-Ссылка на манифест сервиса: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/k8s-app/service.yaml
+Ссылка на манифест сервиса: https://github.com/osipovtema/DiplomYandex/blob/main/k8s-app/service.yaml
 
 Поскольку в манифесте Deployments я указал две реплики приложения для обеспечения его отказоустойчивости, мне потребуется балансировщик нагрузки.
 
 Пишу код Terraform для создания балансировщика нагрузки. Создается группа балансировщика нагрузки, которая будет использоваться для балансировки нагрузки между экземплярами. Создается балансировщик с именем grafana, определяется слушатель на порту 3000, который перенаправляет трафик на порт 30050 целевого узла, настраивается проверка работоспособности (healthcheck) на порту 30050.
 Также создается балансировщик с именем web-app, определяется слушатель на порту 80, который перенаправляет трафик на порт 30051 целевого узла, настраивается проверка работоспособности (healthcheck) на порту 30051.
 
-Ссылка на код Terraform балансировщика нагрузки: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform/load-balancer.tf
+Ссылка на код Terraform балансировщика нагрузки: https://github.com/osipovtema/DiplomYandex/blob/main/terraform/load-balancer.tf
 
 После применения балансировщика нагрузки к облачной инфраструктуре Outputs выглядит следующим образом:
 
@@ -694,7 +690,7 @@ Deployment создан и запущен. Проверю его работу:
 
 Также понадобится подготовить файл значений `values.yaml`, для того, чтобы указать в нем количество Runners, время проверки наличия новых задач, настройка логирования, набор правил для доступа к ресурсам Kubernetes, ограничения на ресурсы процессора и памяти.
 
-Файл значений `values.yaml`, который будет использоваться при установке GitLab Runner доступен по ссылке: https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/helm-runner/values.yaml
+Файл значений `values.yaml`, который будет использоваться при установке GitLab Runner доступен по ссылке: https://github.com/osipovtema/DiplomYandex/blob/main/helm-runner/values.yaml
 
 Приступаю к установке GitLab Runner. Устанавливать буду используя Helm:
 
@@ -762,40 +758,19 @@ Pipeline будет разделен на две стадии:
 
 ![img_69](IMG/img_69.png)
 
-Ссылка на выполненные Pipelines: https://gitlab.com/DemoniumBlack/diplom-test-site/-/pipelines
-
 ### Итоги выполненной работы:
 
 * Репозиторий с конфигурационными файлами Terraform: 
 
-https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform-s3/
+https://github.com/osipovtema/DiplomYandex/tree/main/terraform-s3
 
-https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/terraform/
+https://github.com/osipovtema/DiplomYandex/tree/main/terraform
 
 * CI-CD-terraform pipeline:
 
-https://github.com/DemoniumBlack/fedorchukds-devops-33-56/blob/main/.github/workflows/terraform-cloud.yml
-
-* Репозиторий с конфигурацией ansible:
-
-Был использован обычный репозиторий Kubespray - https://github.com/kubernetes-sigs/kubespray
+https://github.com/osipovtema/DiplomYandex/blob/main/.github/workflows/terraform-cloud.yml
 
 * Репозиторий с Dockerfile тестового приложения:
 
-https://gitlab.com/DemoniumBlack/diplom-test-site
+https://github.com/osipovtema/diplom-test-site
 
-* Ссылка на собранный Docker Image:
-
-https://hub.docker.com/repository/docker/demonium1988/diplom-test-site/tags
-
-* Ссылка на тестовое приложение:
-
-http://158.160.171.65/
-
-* Ссылка на web-интерфейс Grafana с данными доступа:
-
-http://158.160.175.47:3000/login
-
-```login: admin```
-
-```password: AdminSuperPass```
